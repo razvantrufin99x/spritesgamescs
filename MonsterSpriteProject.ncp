@@ -1,0 +1,150 @@
+<Project>
+  <Name>MonsterSpriteProject</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>MonsterSprite</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>MonsterSprite</Name>
+        <Access>Public</Access>
+        <Location left="31" top="17" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected Bitmap _imagine</Member>
+        <Member type="Field">protected Colors _color</Member>
+        <Member type="Field">protected int _lives</Member>
+        <Member type="Field">protected int _maxLives</Member>
+        <Member type="Field">protected string _ai</Member>
+        <Member type="Constructor">public MonsterSprite(Monster settings)</Member>
+        <Member type="Method">public Color GetColor(string colorName)</Member>
+        <Member type="Method">public void InitAll()</Member>
+        <Member type="Method">public void Draw(Graphics g, int x, int y)</Member>
+        <Member type="Method">public bool Shoot()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Monster</Name>
+        <Access>Public</Access>
+        <Location left="367" top="8" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string Image</Member>
+        <Member type="Field">string Color</Member>
+        <Member type="Field">string Lives</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AllMonsters</Name>
+        <Access>Public</Access>
+        <Location left="662" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Monster&gt; Monsters</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>pentru deserializarea settings.xml</Text>
+        <Location left="899" top="169" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>&lt;&lt;attributes&gt;&gt; 
+sections = Serializable</Text>
+        <Location left="217" top="252" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Class">
+        <Name>Clonare</Name>
+        <Access>Public</Access>
+        <Location left="11" top="433" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static object Clone(object obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MainForm</Name>
+        <Access>Public</Access>
+        <Location left="284" top="408" />
+        <Size width="162" height="434" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List &lt;Monster&gt; _listMonsters</Member>
+        <Member type="Field">MonsterSprite _mainMonster</Member>
+        <Member type="Field">Random _rand = new Random()</Member>
+        <Member type="Field">int _monsterType = 0</Member>
+        <Member type="Field">int _x</Member>
+        <Member type="Field">int _y</Member>
+        <Member type="Field">long _elapsed</Member>
+        <Member type="Field">const int MonsterSize = 200</Member>
+        <Member type="Field">const int MaxLevels = 4</Member>
+        <Member type="Field">bool _gameOver = false</Member>
+        <Member type="Constructor">public MainForm()</Member>
+        <Member type="Method">public void loadSettingsToolStripMenuItem_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void startNewGameToolStripMenuItem_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void Redraw()</Member>
+        <Member type="Method">private void exitToolStripMenuItem_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void aboutToolStripMenuItem_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void pictureBox_Paint(object sender, PaintEventArgs e)</Member>
+        <Member type="Method">private void ShootMonster()</Member>
+        <Member type="Method">private void pictureBox_MouseDown(object sender, MouseEventArgs e)</Member>
+        <Member type="Method">private void timer_Tick(object sender, EventArgs e)</Member>
+        <Member type="Method">private void Form1_Load(object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>settings.xml
+&lt;?xml version="1.0" encoding="us-ascii"?&gt;
+&lt;AllMonsters&gt;
+&lt;Monsters&gt;
+&lt;Monster&gt;
+&lt;Image&gt;monster1.jpg&lt;/Image&gt;
+&lt;Color&gt;blue&lt;/Color&gt;
+&lt;Lives&gt;3&lt;/Lives&gt;
+&lt;/Monster&gt;
+&lt;Monster&gt;
+&lt;Image&gt;monster2.jpg&lt;/Image&gt;
+&lt;Color&gt;green&lt;/Color&gt;
+&lt;Lives&gt;3&lt;/Lives&gt;
+&lt;/Monster&gt;
+&lt;Monster&gt;
+&lt;Image&gt;monster3.jpg&lt;/Image&gt;
+&lt;Color&gt;black&lt;/Color&gt;
+&lt;Lives&gt;4&lt;/Lives&gt;
+&lt;/Monster&gt;
+&lt;Monster&gt;
+&lt;Image&gt;monster4.jpg&lt;/Image&gt;
+&lt;Color&gt;red&lt;/Color&gt;
+&lt;Lives&gt;5&lt;/Lives&gt;
+&lt;/Monster&gt;
+&lt;/Monsters&gt;
+&lt;/AllMonsters&gt;</Text>
+        <Location left="525" top="371" />
+        <Size width="511" height="460" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Comment" first="4" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="3" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
